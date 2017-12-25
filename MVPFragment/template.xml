@@ -1,0 +1,38 @@
+<template format="4"
+        revision="1"
+        name="MVP Template Fragment"
+        description="Creates new MVP classes - Presenter, View, Model and Contract">
+ 
+    <category value="Other"/>
+    
+    <dependency name="android-support-v4" revision="8" />
+ 
+    <parameter 
+        id="className"
+        name="Functionality Name"
+        type="string"
+        constraints="class|unique|nonempty"
+        default="MvpFunction"
+        help="The name of the functionality that requires MVP views"/>
+        
+    <parameter
+        id="includeLayout"
+        name="Create layout XML?"
+        type="boolean"
+        default="true"
+        help="Generate a layout XML for the fragment" />
+        
+    <parameter
+        id="fragmentName"
+        name="Fragment Layout Name"
+        type="string"
+        constraints="layout|nonempty|unique"
+        default="fragment_blank"
+        visibility="includeLayout"
+        suggest="fragment_${classToResource(className)}"
+        help="The name of the layout to create" />
+ 
+    <globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+ 
+</template>
