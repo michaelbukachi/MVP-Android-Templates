@@ -9,7 +9,7 @@ class ${className}View {
 
     private WeakReference<View> ref;
 
-    InfoView(View view) {
+    ${className}View(View view) {
         ref = new WeakReference<>(view);
     }
 
