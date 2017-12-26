@@ -11,7 +11,7 @@ import ${applicationPackage}.R;
 </#if>
 
 
-public class ${className}Fragment extends Fragment {
+public class ${className}Fragment extends Fragment implements ${className}View {
 
     private ${className}Presenter presenter;
 
@@ -24,7 +24,7 @@ public class ${className}Fragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.${fragmentName}, container, false);
-        presenter = new ${className}Presenter(new ${className}View(view));
+        presenter = new ${className}Presenter(this);
         return view;
     }
 
